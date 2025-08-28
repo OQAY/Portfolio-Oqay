@@ -106,7 +106,7 @@ class PortfolioManager {
         
         projectDiv.innerHTML = `
             <div class="project-image" aria-label="${project.title} preview">
-                ${project.image}
+                <img src="${project.image}" alt="${project.title} preview" class="project-img" loading="lazy" onerror="this.src='assets/images/placeholder.svg'">
             </div>
             <div class="project-content">
                 <h3 class="project-title">${project.title}</h3>
