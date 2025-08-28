@@ -1,29 +1,31 @@
-/* CSS Variables - Dark Developer Theme */
+/* CSS Variables - Business/Corporate Theme */
 :root {
-  --primary-color: #00D9FF;
-  --secondary-color: #FF6B6B;
-  --accent-color: #4ECDC4;
-  --success-color: #45B7D1;
-  --warning-color: #FFA726;
-  --background-color: #0A0E27;
-  --surface-color: #1A1D3A;
-  --surface-light: #242847;
-  --text-primary: #FFFFFF;
-  --text-secondary: #B8BCC8;
-  --text-muted: #6C7293;
-  --border-color: #2D3748;
-  --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.3);
-  --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 30px rgba(0, 217, 255, 0.3);
-  --border-radius: 8px;
+  --primary-color: #2563EB;
+  --secondary-color: #7C3AED;
+  --accent-color: #059669;
+  --success-color: #10B981;
+  --warning-color: #F59E0B;
+  --error-color: #EF4444;
+  --background-color: #FFFFFF;
+  --surface-color: #F8FAFC;
+  --surface-light: #F1F5F9;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --border-color: #E2E8F0;
+  --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-large: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  --border-radius: 12px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* Code/Tech Colors */
-  --code-bg: #1E1E3F;
-  --terminal-green: #39FF14;
-  --react-blue: #61DAFB;
-  --js-yellow: #F7DF1E;
-  --node-green: #68A063;
+  /* Business Colors */
+  --navy: #1E293B;
+  --blue-gray: #64748B;
+  --slate: #CBD5E1;
+  --professional-blue: #3B82F6;
+  --trust-green: #22C55E;
 }
 
 /* Reset and Base Styles */
@@ -34,19 +36,13 @@
 }
 
 body {
-  font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
   background: var(--background-color);
-  background-image: 
-    url('assets/backgrounds/space-tech.svg'),
-    linear-gradient(135deg, var(--background-color) 0%, #0D1B2A 50%, #1A1D3A 100%);
-  background-size: cover, cover;
-  background-position: center, center;
-  background-attachment: fixed;
-  background-blend-mode: overlay;
   font-size: 16px;
   overflow-x: hidden;
+  letter-spacing: -0.01em;
 }
 
 html {
@@ -65,7 +61,7 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(10, 14, 39, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-light);
@@ -87,8 +83,7 @@ html {
   font-weight: 700;
   color: var(--primary-color);
   text-decoration: none;
-  text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
-  font-family: 'Fira Code', monospace;
+  font-family: 'Inter', sans-serif;
 }
 
 .nav-menu {
@@ -124,10 +119,6 @@ html {
   width: 100%;
 }
 
-.nav-link:hover {
-  text-shadow: 0 0 8px rgba(0, 217, 255, 0.6);
-}
-
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -149,8 +140,7 @@ html {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: 
-    linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(26, 29, 58, 0.9) 100%);
+  background: linear-gradient(135deg, var(--background-color) 0%, var(--surface-color) 100%);
   padding-top: 80px;
   position: relative;
   overflow: hidden;
@@ -196,12 +186,12 @@ html {
 
 .hero-title {
   font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 1.5rem;
   color: var(--text-primary);
-  line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-family: 'Fira Code', monospace;
+  line-height: 1.1;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
@@ -211,7 +201,8 @@ html {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .hero-actions {
@@ -238,33 +229,30 @@ html {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-color), var(--success-color));
-  color: var(--text-primary);
-  box-shadow: var(--shadow-glow);
+  background: var(--primary-color);
+  color: white;
+  box-shadow: var(--shadow-medium);
   border: 1px solid var(--primary-color);
   font-weight: 600;
-  text-shadow: none;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--success-color), var(--primary-color));
+  background: var(--navy);
   transform: translateY(-2px);
-  box-shadow: 0 0 40px rgba(0, 217, 255, 0.5);
-  border-color: var(--success-color);
+  box-shadow: var(--shadow-large);
 }
 
 .btn-secondary {
-  background: rgba(26, 29, 58, 0.8);
+  background: transparent;
   color: var(--primary-color);
   border-color: var(--primary-color);
-  backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
   background: var(--primary-color);
-  color: var(--background-color);
+  color: white;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
+  box-shadow: var(--shadow-medium);
 }
 
 /* Sections */
@@ -293,13 +281,7 @@ section {
 
 /* About Section */
 .about {
-  background-image: 
-    url('assets/backgrounds/circuit-board.svg'),
-    linear-gradient(135deg, rgba(26, 29, 58, 0.95) 0%, rgba(36, 40, 71, 0.95) 100%);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-blend-mode: overlay;
+  background: var(--surface-color);
 }
 
 .about-content {
@@ -312,91 +294,86 @@ section {
   font-size: 1.2rem;
   color: var(--text-secondary);
   line-height: 1.8;
-  font-family: 'Fira Code', monospace;
-  background: rgba(30, 30, 63, 0.6);
-  padding: 2rem;
-  border-radius: var(--border-radius);
-  border-left: 4px solid var(--primary-color);
-  backdrop-filter: blur(10px);
-}
-
-.code-comment {
-  color: var(--terminal-green);
-  font-style: italic;
-}
-
-/* Skills Section */
-.skills {
-  background-image: 
-    url('assets/backgrounds/code-matrix.svg'),
-    linear-gradient(135deg, rgba(30, 30, 63, 0.9) 0%, rgba(26, 29, 58, 0.95) 100%);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-blend-mode: overlay;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.skill-category {
-  background: rgba(26, 29, 58, 0.9);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
+/* Services Section */
+.services {
+  background: var(--background-color);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: var(--surface-color);
+  padding: 2.5rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
   transition: var(--transition);
   border: 1px solid var(--border-color);
-  position: relative;
-  overflow: hidden;
+  text-align: center;
 }
 
-.skill-category:hover {
+.service-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-glow);
+  box-shadow: var(--shadow-large);
   border-color: var(--primary-color);
 }
 
-.skill-title {
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.service-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.service-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
   margin-bottom: 1.5rem;
-  text-align: center;
-  font-family: 'Fira Code', monospace;
-  text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+  font-size: 1rem;
 }
 
-.skill-list {
+.service-benefits {
   list-style: none;
-  text-align: center;
+  text-align: left;
 }
 
-.skill-list li {
+.service-benefits li {
   padding: 0.5rem 0;
   color: var(--text-secondary);
   font-weight: 500;
-  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  padding-left: 1.5rem;
 }
 
-.skill-list li:last-child {
-  border-bottom: none;
+.service-benefits li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--success-color);
+  font-weight: 700;
 }
 
 /* Projects Section */
 .projects {
-  background-image: 
-    url('assets/backgrounds/circuit-board.svg'),
-    linear-gradient(135deg, rgba(26, 29, 58, 0.95) 0%, rgba(36, 40, 71, 0.9) 100%);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-blend-mode: overlay;
+  background: var(--surface-color);
 }
 
 .filter-buttons {
@@ -421,10 +398,9 @@ section {
 .filter-btn:hover,
 .filter-btn.active {
   background: var(--primary-color);
-  color: var(--background-color);
+  color: white;
   border-color: var(--primary-color);
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
-  text-shadow: none;
+  box-shadow: var(--shadow-medium);
 }
 
 .projects-grid {
@@ -436,8 +412,7 @@ section {
 }
 
 .project-card {
-  background: rgba(26, 29, 58, 0.9);
-  backdrop-filter: blur(15px);
+  background: var(--background-color);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
   border: 1px solid var(--border-color);
@@ -448,8 +423,8 @@ section {
 }
 
 .project-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: var(--shadow-glow);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-large);
   border-color: var(--primary-color);
 }
 
@@ -506,14 +481,13 @@ section {
 }
 
 .tech-tag {
-  background: linear-gradient(135deg, var(--accent-color), var(--success-color));
-  color: var(--background-color);
+  background: var(--accent-color);
+  color: white;
   padding: 4px 12px;
   border-radius: 16px;
   font-size: 0.875rem;
-  font-weight: 600;
-  text-shadow: none;
-  font-family: 'Fira Code', monospace;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
 }
 
 .project-links {
@@ -542,13 +516,7 @@ section {
 
 /* Contact Section */
 .contact {
-  background-image: 
-    url('assets/backgrounds/space-tech.svg'),
-    linear-gradient(135deg, rgba(10, 14, 39, 0.9) 0%, rgba(26, 29, 58, 0.95) 100%);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-blend-mode: overlay;
+  background: var(--background-color);
 }
 
 .contact-content {
@@ -575,8 +543,7 @@ section {
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 2rem;
-  background: rgba(26, 29, 58, 0.8);
-  backdrop-filter: blur(10px);
+  background: var(--surface-color);
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
   text-decoration: none;
@@ -586,16 +553,15 @@ section {
   box-shadow: var(--shadow-light);
   min-width: 140px;
   justify-content: center;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Inter', sans-serif;
 }
 
 .contact-link:hover {
   background: var(--primary-color);
-  color: var(--background-color);
+  color: white;
   border-color: var(--primary-color);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
-  text-shadow: none;
+  box-shadow: var(--shadow-large);
 }
 
 .contact-icon {
@@ -605,10 +571,9 @@ section {
 
 /* Footer */
 .footer {
-  background: rgba(10, 14, 39, 0.95);
+  background: var(--surface-color);
   border-top: 1px solid var(--border-color);
   padding: 2rem 0;
-  backdrop-filter: blur(10px);
 }
 
 .footer-text {

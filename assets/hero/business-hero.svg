@@ -1,0 +1,120 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="businessGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8FAFC;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F1F5F9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E2E8F0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="screenBusiness" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0.8" />
+    </linearGradient>
+    <filter id="businessShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#1E293B" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#businessGrad)"/>
+  
+  <!-- Clean geometric patterns -->
+  <g opacity="0.1" stroke="#2563EB" stroke-width="1" fill="none">
+    <circle cx="100" cy="100" r="30"/>
+    <circle cx="500" cy="300" r="40"/>
+    <rect x="450" y="80" width="80" height="80" rx="8"/>
+    <polygon points="80,300 130,250 180,300 130,350" />
+  </g>
+  
+  <!-- Modern laptop/device -->
+  <g transform="translate(200, 150)" filter="url(#businessShadow)">
+    <!-- Laptop base -->
+    <rect x="0" y="80" width="200" height="100" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+    
+    <!-- Laptop screen -->
+    <rect x="10" y="0" width="180" height="100" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    
+    <!-- Screen content - Dashboard/Analytics -->
+    <rect x="20" y="10" width="160" height="80" rx="4" fill="url(#screenBusiness)"/>
+    
+    <!-- Dashboard elements -->
+    <g fill="#FFFFFF" opacity="0.9">
+      <!-- Header bar -->
+      <rect x="25" y="15" width="150" height="8" rx="2"/>
+      
+      <!-- Charts/graphs representation -->
+      <rect x="25" y="30" width="70" height="40" rx="4" fill="rgba(255,255,255,0.2)"/>
+      <rect x="105" y="30" width="70" height="40" rx="4" fill="rgba(255,255,255,0.2)"/>
+      
+      <!-- Bar chart bars -->
+      <rect x="30" y="60" width="8" height="15" fill="#FFFFFF"/>
+      <rect x="42" y="55" width="8" height="20" fill="#FFFFFF"/>
+      <rect x="54" y="50" width="8" height="25" fill="#FFFFFF"/>
+      <rect x="66" y="58" width="8" height="17" fill="#FFFFFF"/>
+      
+      <!-- Pie chart -->
+      <circle cx="140" cy="50" r="15" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <path d="M 140 35 A 15 15 0 0 1 151 45 L 140 50 Z" fill="#FFFFFF"/>
+      
+      <!-- Success metrics -->
+      <circle cx="30" cy="80" r="2" fill="#22C55E"/>
+      <circle cx="50" cy="80" r="2" fill="#22C55E"/>
+      <circle cx="70" cy="80" r="2" fill="#22C55E"/>
+    </g>
+  </g>
+  
+  <!-- Success indicators -->
+  <g transform="translate(80, 80)">
+    <!-- Growth arrow -->
+    <path d="M0 40 L30 10 L25 15 L40 0 L35 15 L30 10" stroke="#059669" stroke-width="3" fill="#059669"/>
+    <text x="0" y="55" font-family="Inter, sans-serif" font-size="12" fill="#059669" font-weight="600">Crescimento</text>
+  </g>
+  
+  <!-- Innovation symbols -->
+  <g transform="translate(450, 120)">
+    <!-- Light bulb idea -->
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#F59E0B" stroke-width="2"/>
+    <path d="M-8 -5 L8 -5 M-6 5 L6 5 M-4 10 L4 10" stroke="#F59E0B" stroke-width="2"/>
+    <text x="-25" y="35" font-family="Inter, sans-serif" font-size="12" fill="#F59E0B" font-weight="600">Inovação</text>
+  </g>
+  
+  <!-- Professional elements -->
+  <g transform="translate(100, 280)">
+    <!-- Documents/reports -->
+    <rect x="0" y="0" width="60" height="80" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" filter="url(#businessShadow)"/>
+    <rect x="10" y="10" width="40" height="3" rx="1" fill="#64748B"/>
+    <rect x="10" y="18" width="35" height="2" rx="1" fill="#94A3B8"/>
+    <rect x="10" y="24" width="40" height="2" rx="1" fill="#94A3B8"/>
+    <rect x="10" y="30" width="30" height="2" rx="1" fill="#94A3B8"/>
+    
+    <!-- Checkmarks -->
+    <circle cx="45" cy="40" r="6" fill="#059669"/>
+    <path d="M42 40 L44 42 L48 38" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+    
+    <text x="0" y="95" font-family="Inter, sans-serif" font-size="12" fill="#475569" font-weight="600">Resultados</text>
+  </g>
+  
+  <!-- Partnership/handshake symbol -->
+  <g transform="translate(400, 280)" opacity="0.8">
+    <rect x="0" y="20" width="40" height="25" rx="12" fill="#7C3AED" transform="rotate(-15)"/>
+    <rect x="25" y="15" width="40" height="25" rx="12" fill="#3B82F6" transform="rotate(15)"/>
+    <text x="-10" y="60" font-family="Inter, sans-serif" font-size="12" fill="#475569" font-weight="600">Parceria</text>
+  </g>
+  
+  <!-- Floating success metrics -->
+  <g opacity="0.6">
+    <rect x="50" y="180" width="80" height="40" rx="8" fill="#FFFFFF" filter="url(#businessShadow)"/>
+    <text x="60" y="195" font-family="Inter, sans-serif" font-size="10" fill="#059669" font-weight="700">+150%</text>
+    <text x="60" y="208" font-family="Inter, sans-serif" font-size="8" fill="#64748B">ROI</text>
+    
+    <rect x="470" y="200" width="80" height="40" rx="8" fill="#FFFFFF" filter="url(#businessShadow)"/>
+    <text x="480" y="215" font-family="Inter, sans-serif" font-size="10" fill="#2563EB" font-weight="700">24/7</text>
+    <text x="480" y="228" font-family="Inter, sans-serif" font-size="8" fill="#64748B">Suporte</text>
+  </g>
+  
+  <!-- Connecting lines showing integration -->
+  <g opacity="0.3" stroke="#64748B" stroke-width="1" fill="none">
+    <line x1="150" y1="150" x2="200" y2="180"/>
+    <line x1="400" y1="180" x2="450" y2="150"/>
+    <line x1="200" y1="280" x2="300" y2="250"/>
+  </g>
+</svg>
