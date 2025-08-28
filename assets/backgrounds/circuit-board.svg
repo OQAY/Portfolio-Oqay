@@ -1,0 +1,142 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="circuitGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#1A1D3A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A0E27;stop-opacity:1" />
+    </radialGradient>
+    <filter id="componentGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1920" height="1080" fill="url(#circuitGrad)"/>
+  
+  <!-- Circuit Traces -->
+  <g stroke-width="2" fill="none" opacity="0.6">
+    <!-- Horizontal traces -->
+    <line x1="0" y1="200" x2="400" y2="200" stroke="#00D9FF"/>
+    <line x1="500" y1="200" x2="900" y2="200" stroke="#00D9FF"/>
+    <line x1="1000" y1="200" x2="1400" y2="200" stroke="#00D9FF"/>
+    <line x1="1500" y1="200" x2="1920" y2="200" stroke="#00D9FF"/>
+    
+    <line x1="0" y1="400" x2="300" y2="400" stroke="#4ECDC4"/>
+    <line x1="400" y1="400" x2="700" y2="400" stroke="#4ECDC4"/>
+    <line x1="800" y1="400" x2="1100" y2="400" stroke="#4ECDC4"/>
+    <line x1="1200" y1="400" x2="1500" y2="400" stroke="#4ECDC4"/>
+    <line x1="1600" y1="400" x2="1920" y2="400" stroke="#4ECDC4"/>
+    
+    <line x1="0" y1="600" x2="350" y2="600" stroke="#FF6B6B"/>
+    <line x1="450" y1="600" x2="750" y2="600" stroke="#FF6B6B"/>
+    <line x1="850" y1="600" x2="1150" y2="600" stroke="#FF6B6B"/>
+    <line x1="1250" y1="600" x2="1550" y2="600" stroke="#FF6B6B"/>
+    <line x1="1650" y1="600" x2="1920" y2="600" stroke="#FF6B6B"/>
+    
+    <line x1="0" y1="800" x2="250" y2="800" stroke="#00D9FF"/>
+    <line x1="350" y1="800" x2="650" y2="800" stroke="#00D9FF"/>
+    <line x1="750" y1="800" x2="1050" y2="800" stroke="#00D9FF"/>
+    <line x1="1150" y1="800" x2="1450" y2="800" stroke="#00D9FF"/>
+    <line x1="1550" y1="800" x2="1920" y2="800" stroke="#00D9FF"/>
+    
+    <!-- Vertical traces -->
+    <line x1="400" y1="0" x2="400" y2="300" stroke="#4ECDC4"/>
+    <line x1="400" y1="400" x2="400" y2="700" stroke="#4ECDC4"/>
+    <line x1="400" y1="800" x2="400" y2="1080" stroke="#4ECDC4"/>
+    
+    <line x1="800" y1="0" x2="800" y2="250" stroke="#FF6B6B"/>
+    <line x1="800" y1="350" x2="800" y2="650" stroke="#FF6B6B"/>
+    <line x1="800" y1="750" x2="800" y2="1080" stroke="#FF6B6B"/>
+    
+    <line x1="1200" y1="0" x2="1200" y2="300" stroke="#00D9FF"/>
+    <line x1="1200" y1="400" x2="1200" y2="700" stroke="#00D9FF"/>
+    <line x1="1200" y1="800" x2="1200" y2="1080" stroke="#00D9FF"/>
+    
+    <line x1="1600" y1="0" x2="1600" y2="350" stroke="#4ECDC4"/>
+    <line x1="1600" y1="450" x2="1600" y2="750" stroke="#4ECDC4"/>
+    <line x1="1600" y1="850" x2="1600" y2="1080" stroke="#4ECDC4"/>
+    
+    <!-- Diagonal connections -->
+    <line x1="400" y1="200" x2="500" y2="300" stroke="#00D9FF"/>
+    <line x1="800" y1="400" x2="900" y2="500" stroke="#4ECDC4"/>
+    <line x1="1200" y1="600" x2="1300" y2="700" stroke="#FF6B6B"/>
+  </g>
+  
+  <!-- Circuit Components -->
+  <g filter="url(#componentGlow)">
+    <!-- Microchips -->
+    <rect x="380" y="180" width="40" height="40" rx="4" fill="#242847" stroke="#00D9FF" stroke-width="2"/>
+    <rect x="390" y="190" width="20" height="20" rx="2" fill="#00D9FF" opacity="0.3"/>
+    
+    <rect x="780" y="380" width="40" height="40" rx="4" fill="#242847" stroke="#4ECDC4" stroke-width="2"/>
+    <rect x="790" y="390" width="20" height="20" rx="2" fill="#4ECDC4" opacity="0.3"/>
+    
+    <rect x="1180" y="580" width="40" height="40" rx="4" fill="#242847" stroke="#FF6B6B" stroke-width="2"/>
+    <rect x="1190" y="590" width="20" height="20" rx="2" fill="#FF6B6B" opacity="0.3"/>
+    
+    <rect x="1580" y="780" width="40" height="40" rx="4" fill="#242847" stroke="#00D9FF" stroke-width="2"/>
+    <rect x="1590" y="790" width="20" height="20" rx="2" fill="#00D9FF" opacity="0.3"/>
+    
+    <!-- Capacitors -->
+    <rect x="495" y="195" width="10" height="30" fill="#4ECDC4"/>
+    <rect x="510" y="195" width="10" height="30" fill="#4ECDC4"/>
+    
+    <rect x="895" y="395" width="10" height="30" fill="#FF6B6B"/>
+    <rect x="910" y="395" width="10" height="30" fill="#FF6B6B"/>
+    
+    <rect x="1295" y="595" width="10" height="30" fill="#00D9FF"/>
+    <rect x="1310" y="595" width="10" height="30" fill="#00D9FF"/>
+    
+    <!-- Resistors -->
+    <rect x="295" y="195" width="30" height="10" rx="5" fill="#FF6B6B"/>
+    <rect x="695" y="395" width="30" height="10" rx="5" fill="#00D9FF"/>
+    <rect x="1095" y="595" width="30" height="10" rx="5" fill="#4ECDC4"/>
+    <rect x="1495" y="795" width="30" height="10" rx="5" fill="#FF6B6B"/>
+    
+    <!-- Connection points -->
+    <circle cx="400" cy="200" r="6" fill="#00D9FF"/>
+    <circle cx="500" cy="200" r="6" fill="#00D9FF"/>
+    <circle cx="800" cy="400" r="6" fill="#4ECDC4"/>
+    <circle cx="900" cy="400" r="6" fill="#4ECDC4"/>
+    <circle cx="1200" cy="600" r="6" fill="#FF6B6B"/>
+    <circle cx="1300" cy="600" r="6" fill="#FF6B6B"/>
+    <circle cx="1600" cy="800" r="6" fill="#00D9FF"/>
+    <circle cx="1700" cy="800" r="6" fill="#00D9FF"/>
+    
+    <!-- Via holes -->
+    <circle cx="300" cy="300" r="4" fill="#1A1D3A" stroke="#00D9FF" stroke-width="1"/>
+    <circle cx="700" cy="500" r="4" fill="#1A1D3A" stroke="#4ECDC4" stroke-width="1"/>
+    <circle cx="1100" cy="700" r="4" fill="#1A1D3A" stroke="#FF6B6B" stroke-width="1"/>
+    <circle cx="1500" cy="300" r="4" fill="#1A1D3A" stroke="#00D9FF" stroke-width="1"/>
+  </g>
+  
+  <!-- Additional smaller components scattered -->
+  <g opacity="0.4" fill="#4ECDC4">
+    <rect x="200" y="150" width="6" height="12" rx="1"/>
+    <rect x="220" y="150" width="6" height="12" rx="1"/>
+    <rect x="600" y="350" width="6" height="12" rx="1"/>
+    <rect x="620" y="350" width="6" height="12" rx="1"/>
+    <rect x="1000" y="550" width="6" height="12" rx="1"/>
+    <rect x="1020" y="550" width="6" height="12" rx="1"/>
+    <rect x="1400" y="750" width="6" height="12" rx="1"/>
+    <rect x="1420" y="750" width="6" height="12" rx="1"/>
+  </g>
+  
+  <!-- Power indicators -->
+  <g>
+    <circle cx="100" cy="100" r="8" fill="#00D9FF" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1800" cy="100" r="8" fill="#4ECDC4" opacity="0.8">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="980" r="8" fill="#FF6B6B" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1800" cy="980" r="8" fill="#00D9FF" opacity="0.8">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
