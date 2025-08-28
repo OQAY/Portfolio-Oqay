@@ -12,6 +12,7 @@ class PortfolioManager {
         this.setupScrollAnimations();
         this.setupMobileMenu();
         this.setupSmoothScrolling();
+        this.setupProjectModal();
     }
 
     setupEventListeners() {
@@ -136,6 +137,12 @@ class PortfolioManager {
                     ${project.technologies.slice(0, 3).map(tech => `<span class="tech-dot" title="${tech}"></span>`).join('')}
                     ${project.technologies.length > 3 ? `<span class="tech-more">+${project.technologies.length - 3}</span>` : ''}
                 </div>
+                <button class="project-details-btn" data-project-id="${project.id}">
+                    Ver detalhes
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.59Z"/>
+                    </svg>
+                </button>
             </div>
         `;
 
@@ -281,6 +288,88 @@ class PortfolioManager {
         }
         
         console.log(`Filter used: ${filter}`);
+    }
+
+    setupProjectModal() {
+        const modal = document.getElementById('projectModal');
+        const overlay = modal.querySelector('.modal-overlay');
+        const closeBtn = modal.querySelector('.modal-close');
+
+        // Close modal events
+        overlay.addEventListener('click', () => this.closeModal());
+        closeBtn.addEventListener('click', () => this.closeModal());
+        
+        // ESC key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                this.closeModal();
+            }
+        });
+
+        // Project details button clicks
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.project-details-btn')) {
+                const projectId = parseInt(e.target.closest('.project-details-btn').dataset.projectId);
+                this.openProjectModal(projectId);
+            }
+        });
+    }
+
+    openProjectModal(projectId) {
+        const project = this.projects.find(p => p.id === projectId);
+        if (!project) return;
+
+        const modal = document.getElementById('projectModal');
+        
+        // Populate modal content
+        document.getElementById('modalTitle').textContent = project.title;
+        document.getElementById('modalImage').src = project.image;
+        document.getElementById('modalImage').alt = project.title + ' preview';
+        
+        document.getElementById('modalCategory').textContent = this.getCategoryLabel(project.category);
+        document.getElementById('modalCategory').className = `modal-category-badge ${project.category}`;
+        document.getElementById('modalYear').textContent = project.year;
+        
+        document.getElementById('modalDescription').textContent = project.description;
+        
+        // Tech list
+        const techList = document.getElementById('modalTechList');
+        techList.innerHTML = project.technologies.map(tech => 
+            `<span class="modal-tech-tag">${tech}</span>`
+        ).join('');
+        
+        // Links
+        const linksContainer = document.getElementById('modalLinks');
+        linksContainer.innerHTML = `
+            ${project.github ? `
+                <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="modal-link-btn github">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    Ver Código
+                </a>
+            ` : ''}
+            ${project.demo ? `
+                <a href="${project.demo}" target="_blank" rel="noopener noreferrer" class="modal-link-btn demo">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                    </svg>
+                    Ver Demo
+                </a>
+            ` : ''}
+        `;
+
+        // Show modal
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
+        modal.setAttribute('aria-hidden', 'false');
+    }
+
+    closeModal() {
+        const modal = document.getElementById('projectModal');
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+        modal.setAttribute('aria-hidden', 'true');
     }
 
     // Performance monitoring
