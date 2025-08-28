@@ -1,18 +1,29 @@
-/* CSS Variables - Pastel Color Palette */
+/* CSS Variables - Dark Developer Theme */
 :root {
-  --primary-color: #B8A9C9;
-  --secondary-color: #96CEB4;
-  --accent-color: #FFEAA7;
-  --background-color: #FAF3F0;
-  --surface-color: #FFFFFF;
-  --text-primary: #2D3436;
-  --text-secondary: #636E72;
-  --text-muted: #B2BEC3;
-  --border-color: #DDD6FE;
-  --shadow-light: 0 2px 12px rgba(184, 169, 201, 0.15);
-  --shadow-medium: 0 4px 24px rgba(184, 169, 201, 0.2);
-  --border-radius: 12px;
+  --primary-color: #00D9FF;
+  --secondary-color: #FF6B6B;
+  --accent-color: #4ECDC4;
+  --success-color: #45B7D1;
+  --warning-color: #FFA726;
+  --background-color: #0A0E27;
+  --surface-color: #1A1D3A;
+  --surface-light: #242847;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B8BCC8;
+  --text-muted: #6C7293;
+  --border-color: #2D3748;
+  --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 30px rgba(0, 217, 255, 0.3);
+  --border-radius: 8px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Code/Tech Colors */
+  --code-bg: #1E1E3F;
+  --terminal-green: #39FF14;
+  --react-blue: #61DAFB;
+  --js-yellow: #F7DF1E;
+  --node-green: #68A063;
 }
 
 /* Reset and Base Styles */
@@ -23,10 +34,17 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
   line-height: 1.6;
   color: var(--text-primary);
-  background-color: var(--background-color);
+  background: var(--background-color);
+  background-image: 
+    url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1920&h=1080&fit=crop&crop=center'),
+    linear-gradient(135deg, var(--background-color) 0%, #0D1B2A 50%, #1A1D3A 100%);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
   font-size: 16px;
   overflow-x: hidden;
 }
@@ -47,9 +65,10 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(250, 243, 240, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(10, 14, 39, 0.95);
+  backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-light);
   z-index: 1000;
   transition: var(--transition);
 }
@@ -68,6 +87,8 @@ html {
   font-weight: 700;
   color: var(--primary-color);
   text-decoration: none;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+  font-family: 'Fira Code', monospace;
 }
 
 .nav-menu {
@@ -103,6 +124,10 @@ html {
   width: 100%;
 }
 
+.nav-link:hover {
+  text-shadow: 0 0 8px rgba(0, 217, 255, 0.6);
+}
+
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -124,8 +149,16 @@ html {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--background-color) 0%, #F8F5FF 100%);
+  background-image: 
+    url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&h=1080&fit=crop'),
+    linear-gradient(135deg, rgba(10, 14, 39, 0.8) 0%, rgba(26, 29, 58, 0.9) 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
   padding-top: 80px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-content {
@@ -141,6 +174,8 @@ html {
   margin-bottom: 1.5rem;
   color: var(--text-primary);
   line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Fira Code', monospace;
 }
 
 .hero-subtitle {
@@ -150,6 +185,7 @@ html {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .hero-actions {
@@ -176,27 +212,33 @@ html {
 }
 
 .btn-primary {
-  background: var(--primary-color);
-  color: white;
-  box-shadow: var(--shadow-light);
+  background: linear-gradient(135deg, var(--primary-color), var(--success-color));
+  color: var(--text-primary);
+  box-shadow: var(--shadow-glow);
+  border: 1px solid var(--primary-color);
+  font-weight: 600;
+  text-shadow: none;
 }
 
 .btn-primary:hover {
-  background: #A294B8;
+  background: linear-gradient(135deg, var(--success-color), var(--primary-color));
   transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.5);
+  border-color: var(--success-color);
 }
 
 .btn-secondary {
-  background: transparent;
+  background: rgba(26, 29, 58, 0.8);
   color: var(--primary-color);
   border-color: var(--primary-color);
+  backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
   background: var(--primary-color);
-  color: white;
+  color: var(--background-color);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
 }
 
 /* Sections */
@@ -225,7 +267,13 @@ section {
 
 /* About Section */
 .about {
-  background: var(--surface-color);
+  background-image: 
+    url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop'),
+    linear-gradient(135deg, rgba(26, 29, 58, 0.95) 0%, rgba(36, 40, 71, 0.95) 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
 }
 
 .about-content {
@@ -238,11 +286,28 @@ section {
   font-size: 1.2rem;
   color: var(--text-secondary);
   line-height: 1.8;
+  font-family: 'Fira Code', monospace;
+  background: rgba(30, 30, 63, 0.6);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-color);
+  backdrop-filter: blur(10px);
+}
+
+.code-comment {
+  color: var(--terminal-green);
+  font-style: italic;
 }
 
 /* Skills Section */
 .skills {
-  background: linear-gradient(135deg, var(--background-color) 0%, rgba(150, 206, 180, 0.1) 100%);
+  background-image: 
+    url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1920&h=1080&fit=crop'),
+    linear-gradient(135deg, rgba(30, 30, 63, 0.9) 0%, rgba(26, 29, 58, 0.95) 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
 }
 
 .skills-grid {
@@ -254,7 +319,8 @@ section {
 }
 
 .skill-category {
-  background: var(--surface-color);
+  background: rgba(26, 29, 58, 0.9);
+  backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
@@ -266,7 +332,8 @@ section {
 
 .skill-category:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--primary-color);
 }
 
 .skill-title {
@@ -275,6 +342,8 @@ section {
   color: var(--primary-color);
   margin-bottom: 1.5rem;
   text-align: center;
+  font-family: 'Fira Code', monospace;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
 }
 
 .skill-list {
@@ -295,7 +364,13 @@ section {
 
 /* Projects Section */
 .projects {
-  background: linear-gradient(135deg, var(--surface-color) 0%, rgba(184, 169, 201, 0.05) 100%);
+  background-image: 
+    url('https://images.unsplash.com/photo-1522252234503-e356532cafd5?w=1920&h=1080&fit=crop'),
+    linear-gradient(135deg, rgba(26, 29, 58, 0.95) 0%, rgba(36, 40, 71, 0.9) 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
 }
 
 .filter-buttons {
@@ -320,8 +395,10 @@ section {
 .filter-btn:hover,
 .filter-btn.active {
   background: var(--primary-color);
-  color: white;
+  color: var(--background-color);
   border-color: var(--primary-color);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+  text-shadow: none;
 }
 
 .projects-grid {
@@ -333,9 +410,11 @@ section {
 }
 
 .project-card {
-  background: var(--surface-color);
+  background: rgba(26, 29, 58, 0.9);
+  backdrop-filter: blur(15px);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
   overflow: hidden;
   transition: var(--transition);
   opacity: 1;
@@ -343,8 +422,9 @@ section {
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-medium);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--primary-color);
 }
 
 .project-card.hidden {
@@ -400,12 +480,14 @@ section {
 }
 
 .tech-tag {
-  background: var(--accent-color);
-  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--accent-color), var(--success-color));
+  color: var(--background-color);
   padding: 4px 12px;
   border-radius: 16px;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
+  text-shadow: none;
+  font-family: 'Fira Code', monospace;
 }
 
 .project-links {
@@ -433,6 +515,16 @@ section {
 }
 
 /* Contact Section */
+.contact {
+  background-image: 
+    url('https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=1920&h=1080&fit=crop'),
+    linear-gradient(135deg, rgba(10, 14, 39, 0.9) 0%, rgba(26, 29, 58, 0.95) 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+}
+
 .contact-content {
   text-align: center;
   max-width: 600px;
@@ -457,7 +549,8 @@ section {
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 2rem;
-  background: var(--surface-color);
+  background: rgba(26, 29, 58, 0.8);
+  backdrop-filter: blur(10px);
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
   text-decoration: none;
@@ -467,14 +560,16 @@ section {
   box-shadow: var(--shadow-light);
   min-width: 140px;
   justify-content: center;
+  font-family: 'Fira Code', monospace;
 }
 
 .contact-link:hover {
   background: var(--primary-color);
-  color: white;
+  color: var(--background-color);
   border-color: var(--primary-color);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-glow);
+  text-shadow: none;
 }
 
 .contact-icon {
@@ -484,9 +579,10 @@ section {
 
 /* Footer */
 .footer {
-  background: var(--surface-color);
+  background: rgba(10, 14, 39, 0.95);
   border-top: 1px solid var(--border-color);
   padding: 2rem 0;
+  backdrop-filter: blur(10px);
 }
 
 .footer-text {
