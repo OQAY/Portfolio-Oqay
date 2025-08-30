@@ -7,8 +7,40 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Soluções digitais profissionais para seu negócio - Desenvolvimento web, aplicações e consultoria"
     />
+    <meta name="keywords" content="desenvolvimento web, soluções digitais, consultoria, aplicações web, transformação digital" />
+    <meta name="author" content="Especialista em Soluções Digitais" />
+    
+    <style>
+      /* Critical CSS - Above the fold content */
+      *{margin:0;padding:0;box-sizing:border-box}
+      body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;color:#0F172A;background:#FFF;overflow-x:hidden}
+      html{scroll-behavior:smooth}
+      .container{max-width:1200px;margin:0 auto;padding:0 2rem}
+      .header{position:fixed;top:0;width:100%;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid #E2E8F0;box-shadow:0 1px 3px rgba(0,0,0,.1);z-index:1000}
+      .nav-container{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:1rem 2rem}
+      .logo-text{font-size:1.5rem;font-weight:700;color:#2563EB}
+      .nav-menu{display:flex;list-style:none;gap:2rem}
+      .nav-link{text-decoration:none;color:#475569;font-weight:500}
+      .hero{min-height:100vh;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);display:flex;align-items:center;position:relative;overflow:hidden}
+      .hero-content{text-align:center;color:white;z-index:2}
+      .hero-title{font-size:3.5rem;font-weight:900;margin-bottom:1.5rem;text-shadow:0 2px 4px rgba(0,0,0,.3)}
+      .hero-subtitle{font-size:1.25rem;font-weight:300;margin-bottom:2rem;opacity:.9}
+      .cta-button{display:inline-block;background:#22C55E;color:white;padding:1rem 2rem;text-decoration:none;border-radius:12px;font-weight:600;box-shadow:0 4px 6px rgba(0,0,0,.1);transition:all .3s ease}
+      .mobile-menu-toggle{display:none}
+      @media(max-width:768px){
+        .nav-menu{display:none}
+        .mobile-menu-toggle{display:block;background:none;border:none;cursor:pointer}
+        .hero-title{font-size:2.5rem}
+        .container{padding:0 1rem}
+      }
+    </style>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,7 +56,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Portfolio Profissional | Soluções Digitais para seu Negócio</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

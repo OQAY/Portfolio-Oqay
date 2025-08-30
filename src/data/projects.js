@@ -132,7 +132,5 @@ const projectsData = [
     }
 ];
 
-// Export for module usage
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { projectsData };
-}
+// Export for ES6 modules (React)
+export default projectsData;
