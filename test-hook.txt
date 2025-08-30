@@ -1,0 +1,2 @@
+Testando hook de som do Windows! ✓ EDITADO
+Se você ouviu um som "Windows Ding", o hook funcionou!

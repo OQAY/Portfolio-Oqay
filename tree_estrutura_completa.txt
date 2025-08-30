@@ -1,0 +1,200 @@
+# Estrutura Completa do Projeto - Tokyo Free White React Admin Dashboard
+
+## Arquivos da Raiz
+.eslintignore
+.eslintrc.json
+.gitignore
+.prettierrc
+LICENSE
+package-lock.json
+package.json
+README.md
+tsconfig.json
+
+## Diretório Public
+├── favicon.ico
+├── icon-192x192.png
+├── icon-256x256.png
+├── icon-384x384.png
+├── icon-512x512.png
+├── index.html
+├── manifest.json
+├── robots.txt
+├── _redirects
+└── static/
+    └── images/
+        ├── avatars/
+        │   ├── 1.jpg
+        │   ├── 2.jpg
+        │   ├── 3.jpg
+        │   ├── 4.jpg
+        │   └── 5.jpg
+        ├── logo/
+        │   ├── google.svg
+        │   ├── material-ui.svg
+        │   └── typescript.svg
+        ├── overview/
+        │   └── tokyo-logo.png
+        ├── placeholders/
+        │   ├── covers/
+        │   │   ├── 1.jpg
+        │   │   ├── 5.jpg
+        │   │   └── 6.jpg
+        │   ├── illustrations/
+        │   │   ├── 1.svg
+        │   │   ├── 2.png
+        │   │   ├── 3.svg
+        │   │   ├── 4.svg
+        │   │   ├── 5.svg
+        │   │   └── 6.png
+        │   └── logo/
+        │       ├── bitcoin.png
+        │       ├── cardano.png
+        │       ├── ethereum.png
+        │       ├── google-logo.jpg
+        │       ├── mastercard.png
+        │       ├── ripple.png
+        │       └── visa.png
+        └── status/
+            ├── 404.svg
+            ├── 500.svg
+            ├── coming-soon.svg
+            └── maintenance.svg
+
+## Diretório Src
+└── src/
+    ├── App.tsx
+    ├── index.tsx
+    ├── react-app-env.d.ts
+    ├── reportWebVitals.ts
+    ├── serviceWorker.ts
+    ├── router.tsx
+    ├── components/
+    │   ├── Footer/
+    │   │   └── index.tsx
+    │   ├── Label/
+    │   │   └── index.tsx
+    │   ├── Logo/
+    │   │   └── index.tsx
+    │   ├── LogoSign/
+    │   │   └── index.tsx
+    │   ├── PageTitle/
+    │   │   └── index.tsx
+    │   ├── PageTitleWrapper/
+    │   │   └── index.tsx
+    │   ├── Scrollbar/
+    │   │   └── index.tsx
+    │   ├── SuspenseLoader/
+    │   │   └── index.tsx
+    │   └── Text/
+    │       └── index.tsx
+    ├── content/
+    │   ├── applications/
+    │   │   ├── Messenger/
+    │   │   │   ├── BottomBarContent.tsx
+    │   │   │   ├── ChatContent.tsx
+    │   │   │   ├── index.tsx
+    │   │   │   ├── SidebarContent.tsx
+    │   │   │   └── TopBarContent.tsx
+    │   │   ├── Transactions/
+    │   │   │   ├── BulkActions.tsx
+    │   │   │   ├── index.tsx
+    │   │   │   ├── PageHeader.tsx
+    │   │   │   ├── RecentOrders.tsx
+    │   │   │   └── RecentOrdersTable.tsx
+    │   │   └── Users/
+    │   │       ├── profile/
+    │   │       │   ├── Addresses.tsx
+    │   │       │   ├── Feed.tsx
+    │   │       │   ├── index.tsx
+    │   │       │   ├── MyCards.tsx
+    │   │       │   ├── PopularTags.tsx
+    │   │       │   ├── ProfileCover.tsx
+    │   │       │   └── RecentActivity.tsx
+    │   │       └── settings/
+    │   │           ├── ActivityTab.tsx
+    │   │           ├── EditProfileTab.tsx
+    │   │           ├── index.tsx
+    │   │           ├── NotificationsTab.tsx
+    │   │           ├── PageHeader.tsx
+    │   │           └── SecurityTab.tsx
+    │   ├── dashboards/
+    │   │   └── Crypto/
+    │   │       ├── AccountBalance.tsx
+    │   │       ├── AccountSecurity.tsx
+    │   │       ├── index.tsx
+    │   │       ├── PageHeader.tsx
+    │   │       ├── Wallets.tsx
+    │   │       ├── WatchList.tsx
+    │   │       ├── WatchListColumn.tsx
+    │   │       └── WatchListRow.tsx
+    │   ├── overview/
+    │   │   ├── Hero/
+    │   │   │   └── index.tsx
+    │   │   └── index.tsx
+    │   └── pages/
+    │       ├── Components/
+    │       │   ├── Accordions/
+    │       │   │   └── index.tsx
+    │       │   ├── Avatars/
+    │       │   │   └── index.tsx
+    │       │   ├── Badges/
+    │       │   │   └── index.tsx
+    │       │   ├── Buttons/
+    │       │   │   └── index.tsx
+    │       │   ├── Cards/
+    │       │   │   └── index.tsx
+    │       │   ├── Forms/
+    │       │   │   └── index.tsx
+    │       │   ├── Modals/
+    │       │   │   └── index.tsx
+    │       │   ├── Tabs/
+    │       │   │   └── index.tsx
+    │       │   └── Tooltips/
+    │       │       └── index.tsx
+    │       └── Status/
+    │           ├── ComingSoon/
+    │           │   └── index.tsx
+    │           ├── Maintenance/
+    │           │   └── index.tsx
+    │           ├── Status404/
+    │           │   └── index.tsx
+    │           └── Status500/
+    │               └── index.tsx
+    ├── contexts/
+    │   └── SidebarContext.tsx
+    ├── layouts/
+    │   ├── BaseLayout/
+    │   │   └── index.tsx
+    │   └── SidebarLayout/
+    │       ├── index.tsx
+    │       ├── Header/
+    │       │   ├── index.tsx
+    │       │   ├── Buttons/
+    │       │   │   ├── index.tsx
+    │       │   │   ├── Notifications/
+    │       │   │   │   └── index.tsx
+    │       │   │   └── Search/
+    │       │   │       └── index.tsx
+    │       │   ├── Menu/
+    │       │   │   └── index.tsx
+    │       │   └── Userbox/
+    │       │       └── index.tsx
+    │       └── Sidebar/
+    │           ├── index.tsx
+    │           └── SidebarMenu/
+    │               └── index.tsx
+    ├── models/
+    │   └── crypto_order.ts
+    └── theme/
+        ├── base.ts
+        ├── schemes/
+        │   └── PureLightTheme.ts
+        └── ThemeProvider.tsx
+
+## Total de Arquivos
+- Arquivos de configuração: 9
+- Arquivos TypeScript/React: 67
+- Imagens e assets: 35
+- Arquivos HTML/JSON: 4
+- Total: 115 arquivos
