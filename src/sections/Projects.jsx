@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import projectsData from '../data/projects';
+import ProjectModal from '../components/ProjectModal';
 
 function Projects() {
   const [projects, setProjects] = useState([]);
   const [currentFilter, setCurrentFilter] = useState('all');
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     // Convert projectsData to array if needed
@@ -26,8 +29,13 @@ function Projects() {
   };
 
   const handleProjectClick = (project) => {
-    // Modal functionality will be implemented
-    console.log('Project clicked:', project.title);
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
   };
 
   const filteredProjects = filterProjects();
@@ -121,6 +129,12 @@ function Projects() {
           ))}
         </div>
       </div>
+      
+      <ProjectModal 
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </section>
   );
 }
