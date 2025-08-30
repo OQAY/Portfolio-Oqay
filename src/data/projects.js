@@ -11,15 +11,67 @@ const projectsData = [
         demo: "https://www.lorenviê.com.br",
         featured: true,
         status: "completed",
-        year: 2024
+        year: 2025
     },
     {
         id: 2,
-        title: "Dashboard Analytics",
-        description: "Dashboard interativo para visualização de dados com gráficos em tempo real, filtros avançados e relatórios customizáveis. Processamento de grandes volumes de dados com performance otimizada.",
-        category: "frontend",
+        title: "Império Digital Menu - Restaurant App",
+        description: "Cardápio digital mobile-first para restaurante, oferecendo experiência premium de seleção de pedidos similar aos grandes apps de delivery. Interface intuitiva com categorização de produtos, visualização detalhada com fotos, sistema de carrinho e checkout otimizado. Design responsivo focado em conversão e usabilidade móvel.",
+        category: "fullstack",
+        technologies: ["React", "Tailwind CSS", "Mobile-First Design", "Vercel", "Responsive UI"],
+        image: "assets/images/cardapio-digital.jpg",
+        github: "https://github.com/OQAY/",
+        demo: "https://imperio-cardapio.vercel.app",
+        featured: false,
+        status: "completed",
+        year: 2025
+    },
+    {
+        id: 3,
+        title: "Sistema de Arbitragem de Cryptomoedas",
+        description: "Sistema de arbitragem de cryptomoedas com interface intuitiva e funcionalidades avançadas para monitorar mercados e tomar decisões informadas.",
+        category: "fullstack",
         technologies: ["React", "D3.js", "TypeScript", "Tailwind CSS"],
-        image: "assets/images/analytics-preview.svg",
+        image: "assets/images/crypto-arb.png",
+        github: "https://github.com/OQAY/",
+        demo: "https://cryptoarb123.vercel.app/pages/demo-arb.html",
+        featured: true,
+        status: "completed",
+        year: 2025
+    },
+    {
+        id: 4,
+        title: "Kanban Board",
+        description: "Kanban board com interface intuitiva e funcionalidades avançadas para gerenciar tarefas e projetos.",
+        category: "Fullstack",
+        technologies: ["Angular","NestJS", "TypeScript","PostgreSQL", "TypeORM", "Angular Material", "JWT", "Swagger"],
+        image: "assets/images/kanban.png",
+        github: "https://github.com/OQAY/",
+        demo: "https://kanban-oqay.vercel.app",
+        featured: true,
+        status: "completed",
+        year: 2025
+    },
+    {
+        id: 5,
+        title: "Sistema de otimização de Frota - Digital Twin",
+        description: "Gêmeo digital para otimização de rotas logísticas em tempo real. Sistema adaptativo que evoluiu de 40% para 0% de atrasos, garantindo 100% de utilização da frota. Implementa algoritmos de roteamento inteligente, políticas dinâmicas de decisão e simulação temporal para maximizar eficiência operacional.",
+        category: "backend",
+        technologies: ["Python", "Optimization Algorithms", "Digital Twin", "Real-time Simulation", "Data Structures"],
+        image: "assets/images/digital-twin-fleet.jpg",
+        github: "https://github.com/OQAY/",
+        demo: "https://recharts.org/en-US/examples",
+        featured: true,
+        status: "completed",
+        year: 2025
+    },
+    {
+        id: 7,
+        title: "Sports Betting Automation Bot",
+        description: "Bot de apostas esportivas com execução automática de entradas e atualização de dados em tempo real. Web scraper para coleta de odds e eventos, integração com planilhas para tracking de resultados. Sistema 100% automatizado com processamento instantâneo de dados.",
+        category: "backend",
+        technologies: ["Python", "Web Scraping", "API REST", "Real-time Processing", "Data Automation"],
+        image: "assets/images/sport-betting-automation-bot.png",
         github: "https://github.com/OQAY/",
         demo: "https://recharts.org/en-US/examples",
         featured: true,
@@ -27,109 +79,48 @@ const projectsData = [
         year: 2024
     },
     {
-        id: 3,
-        title: "API de Microserviços",
-        description: "Arquitetura de microserviços escalável com autenticação JWT, rate limiting, documentação automática e monitoramento. Inclui testes automatizados e CI/CD.",
+        id: 8,
+        title: "Ferramentas de automação para gestão de planilhas corporativas",
+        description: "Ferramentas de automação Python para gestão de planilhas corporativas. Scripts para geração automática de relatórios, backups programados e padronização de dados. Reduziu o tempo de tarefas manuais e eliminou inconsistências nos registros.",
         category: "backend",
-        technologies: ["Node.js", "Express", "Redis", "MongoDB", "Docker", "AWS"],
-        image: "assets/images/api-preview.svg",
+        technologies: ["Python", "Pandas", "OpenPyXL", "Data Processing", "File Automation"],
+        image: "assets/images/python-bot.png",
         github: "https://github.com/OQAY/",
-        demo: "https://petstore.swagger.io/",
+        demo: "https://recharts.org/en-US/examples",
         featured: true,
         status: "completed",
         year: 2024
     },
     {
-        id: 4,
-        title: "App de Gestão de Tarefas",
-        description: "Aplicativo de produtividade com funcionalidades de drag & drop, colaboração em equipe, notificações push e sincronização offline. Interface intuitiva e responsiva.",
-        category: "fullstack",
-        technologies: ["Next.js", "Prisma", "PostgreSQL", "Tailwind CSS", "PWA"],
-        image: "assets/images/tasks-preview.svg",
-        github: "https://github.com/OQAY/.js",
-        demo: "https://todoist.com/app/",
-        featured: false,
-        status: "completed",
-        year: 2023
-    },
-    {
-        id: 5,
-        title: "Landing Page Responsiva",
-        description: "Landing page moderna e totalmente responsiva com animações CSS, formulário de contato funcional e otimização para SEO. Design focado em conversão.",
-        category: "frontend",
-        technologies: ["HTML5", "CSS3", "JavaScript", "GSAP", "Netlify Forms"],
-        image: "assets/images/landing-preview.svg",
-        github: "https://github.com/OQAY/",
-        demo: "https://codepen.io/GreenSock/pen/OPqpRJ",
-        featured: false,
-        status: "completed",
-        year: 2023
-    },
-    {
         id: 6,
-        title: "Sistema de Autenticação",
-        description: "Sistema robusto de autenticação e autorização com múltiplos provedores OAuth, two-factor authentication e gerenciamento de sessões seguras.",
+        title: "Geração e renomeação de PDFs em cartórios e órgãos de registro",
+        description: "Sistema de automação para geração e renomeação de PDFs em cartórios e órgãos de registro. Elimina tarefas repetitivas com Selenium, integração OCR via Tesseract para extração de dados, e APIs internas. Reduziu em 70% o tempo de processamento e aumentou a confiabilidade nas entregas.",
         category: "backend",
-        technologies: ["Node.js", "Passport.js", "Redis", "JWT", "OAuth2"],
-        image: "assets/images/auth-preview.svg",
+        technologies: ["Python", "Selenium", "Tesseract OCR", "PDF Processing"],
+        image: "assets/images/python-pastel.jpg",
         github: "https://github.com/OQAY/",
-        demo: "https://auth0.com/authenticate",
-        featured: false,
+        demo: "https://recharts.org/en-US/examples",
+        featured: true,
         status: "completed",
-        year: 2023
-    },
-    {
-        id: 7,
-        title: "Chat em Tempo Real",
-        description: "Aplicação de chat com WebSockets, salas privadas e públicas, compartilhamento de arquivos e histórico de mensagens. Suporte a emojis e notificações.",
-        category: "fullstack",
-        technologies: ["React", "Socket.io", "Node.js", "MongoDB", "Cloudinary"],
-        image: "assets/images/chat-preview.svg",
-        github: "https://github.com/OQAY/.io",
-        demo: "https://socket.io/demos/chat/",
-        featured: false,
-        status: "completed",
-        year: 2023
-    },
-    {
-        id: 8,
-        title: "PWA de Clima",
-        description: "Progressive Web App para previsão do tempo com dados de geolocalização, gráficos interativos, notificações push e funcionamento offline.",
-        category: "frontend",
-        technologies: ["JavaScript", "PWA", "Service Workers", "Chart.js", "Weather API"],
-        image: "assets/images/weather-preview.svg",
-        github: "https://github.com/OQAY/.js",
-        demo: "https://weather.com/",
-        featured: false,
-        status: "completed",
-        year: 2023
-    },
-    {
-        id: 9,
-        title: "Sistema de Blog",
-        description: "CMS completo para blog com editor WYSIWYG, sistema de comentários, categorias e tags, SEO otimizado e painel administrativo.",
-        category: "fullstack",
-        technologies: ["Next.js", "Sanity CMS", "Vercel", "TypeScript"],
-        image: "assets/images/blog-preview.svg",
-        github: "https://github.com/OQAY//sanity",
-        demo: "https://www.sanity.io/",
-        featured: false,
-        status: "completed",
-        year: 2022
-    },
-    {
-        id: 10,
-        title: "Portfolio Anterior",
-        description: "Primeira versão do portfolio pessoal com design clean e apresentação de projetos anteriores. Foco em performance e acessibilidade.",
-        category: "frontend",
-        technologies: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
-        image: "assets/images/portfolio-preview.svg",
-        github: "https://github.com/OQAY/-gem",
-        demo: "https://pages.github.com/",
-        featured: false,
-        status: "archived",
-        year: 2022
+        year: 2024
     }
+
+    
+    /* TEMPLATE PARA NOVOS PROJETOS - COPIE E PREENCHA
+    ,{
+        id: ,
+        title: "titulo",
+        description: "essa é a descrição",
+        category: "frontend backend ou fullstack",
+        technologies: ["Angular"],
+        image: "assets/images/",
+        github: "https://github.com/OQAY/",
+        demo: "https://recharts.org/en-US/examples",
+        featured: true,
+        status: "completed",
+        year: 2024
+    }
+    */
 ];
 
 // Export for ES6 modules (React)
