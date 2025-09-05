@@ -1,19 +1,6 @@
 // Projects Data Configuration
 const projectsData = [
     {
-        id: 1,
-        title: "Sistema de E-commerce Lorenviê",
-        description: "Plataforma completa de e-commerce com carrinho de compras, sistema de pagamento integrado e painel administrativo. Incluindo análise de vendas e sistema de avaliações.",
-        category: "fullstack",
-        technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Docker"],
-        image: "assets/images/lorenvie.png",
-        github: "https://github.com/OQAY/",
-        demo: "https://www.lorenviê.com.br",
-        featured: true,
-        status: "completed",
-        year: 2024
-    },
-    {
         id: 2,
         title: "Dashboard Analytics",
         description: "Dashboard interativo para visualização de dados com gráficos em tempo real, filtros avançados e relatórios customizáveis. Processamento de grandes volumes de dados com performance otimizada.",
@@ -136,3 +123,4 @@ const projectsData = [
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { projectsData };
 }
+
